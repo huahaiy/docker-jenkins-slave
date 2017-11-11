@@ -2,6 +2,6 @@
 
 set -e
 
-echo $JENKINS_MASTER_KEY >> /home/jenkins-slave/.ssh/authorized_keys 
+echo jenkins-slave:$JENKINS_SLAVE_PASSWD | chpasswd
 
 exec "$@"
